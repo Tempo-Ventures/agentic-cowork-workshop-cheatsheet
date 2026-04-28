@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheatsheet // Terminál + Claude Code // HYW 2026 · Tempo</title>
+<meta name="description" content="Cheatsheet pro účastníky workshopu Hack Your Way 2026 (Tempo.ooo): terminál, Claude Code, bezpečné používání.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cheatsheet.css">
+</head>
+<body>
+
+<nav class="cs-nav">
+  <span class="nav-label">Cheatsheet //</span>
+  <a href="index.html" class="active">Terminál + Claude</a>
+  <a href="hranice.html" >Hranice agenta</a>
+  <a href="varianty.html" >Šest cest k agentovi</a>
+</nav>
+
+<article class="page" id="page-1">
+
+<header class="bar">
+  <div class="crest">
+    <div class="row1">
+      <span>Cheatsheet</span>
+      <span class="slash">//</span>
+      <span style="color: var(--term)">Terminál</span>
+      <span class="slash">+</span>
+      <span style="color: var(--claude)">Claude Code</span>
+    </div>
+  </div>
+  <div class="stamp">Hack Your Way 2026 · Workshop · Tempo.ooo</div>
+</header>
+
+<main class="grid">
+
+  <!-- ────── COLUMN 1: TERMINAL ────── -->
+  <section class="col" data-tone="term" id="terminal">
+    <header>
+      <h2>Terminál</h2>
+    </header>
+    <div class="body">
+
+      <div class="block">
+        <h3>Otevřít terminál</h3>
+        <dl class="rows">
+          <dt><kbd>Cmd</kbd>+<kbd>␣</kbd><span class="os">macOS</span></dt>
+          <dd>Spotlight → napište <code>Terminal</code> → Enter</dd>
+          <dt><kbd>Win</kbd>+<kbd>R</kbd><span class="os win">Win</span></dt>
+          <dd>Napište <code>powershell</code> → Enter</dd>
+        </dl>
+      </div>
+
+      <div class="block">
+        <h3>Pohyb ve složkách</h3>
+        <dl class="rows">
+          <dt><code>pwd</code></dt><dd>Kde právě jsem</dd>
+          <dt><code>ls</code><span class="os">mac</span></dt><dd>Vypsat obsah složky</dd>
+          <dt><code>dir</code><span class="os win">Win</span></dt><dd>Vypsat obsah složky</dd>
+          <dt><code>cd slozka</code></dt><dd>Vstoupit do složky</dd>
+          <dt><code>cd ..</code></dt><dd>O úroveň výš</dd>
+          <dt><code>cd ~</code></dt><dd>Domovská složka</dd>
+          <dt><code>cd -</code></dt><dd>Předchozí složka</dd>
+        </dl>
+      </div>
+
+      <div class="block">
+        <h3>Soubory</h3>
+        <dl class="rows">
+          <dt><code>mkdir x</code></dt><dd>Vytvořit složku <em>x</em></dd>
+          <dt><code>cp a b</code></dt><dd>Kopie <em>a</em> → <em>b</em></dd>
+          <dt><code>mv a b</code></dt><dd>Přesun / přejmenování</dd>
+          <dt><code>rm a</code></dt><dd>Smazat napevno (bez koše)</dd>
+          <dt><code>cat a.md</code></dt><dd>Vypsat obsah souboru</dd>
+          <dt><code>open .</code><span class="os">mac</span></dt><dd>Otevřít složku ve Finderu</dd>
+          <dt><code>explorer .</code><span class="os win">Win</span></dt><dd>Otevřít v Průzkumníku</dd>
+        </dl>
+      </div>
+
+      <div class="block">
+        <h3>Cesty</h3>
+        <dl class="rows">
+          <dt><code>~</code></dt><dd>Domov</dd>
+          <dt><code>.</code></dt><dd>Aktuální složka</dd>
+          <dt><code>..</code></dt><dd>O úroveň výš</dd>
+          <dt><code>/</code></dt><dd>Oddělovač (<code>\</code> jen Win)</dd>
+        </dl>
+      </div>
+
+      <div class="block">
+        <h3>Klávesové zkratky</h3>
+        <dl class="rows">
+          <dt><kbd>Tab</kbd></dt><dd>Doplnit název / příkaz</dd>
+          <dt><kbd>↑</kbd> <kbd>↓</kbd></dt><dd>Historie příkazů</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>R</kbd></dt><dd>Hledat v historii</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>C</kbd></dt><dd>Přerušit příkaz</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>L</kbd></dt><dd>Vyčistit obrazovku</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>A</kbd> / <kbd>E</kbd></dt><dd>Začátek / konec řádku</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>U</kbd> / <kbd>K</kbd></dt><dd>Smazat doleva / doprava</dd>
+          <dt><kbd>Cmd</kbd>+<kbd>+</kbd> / <kbd>−</kbd></dt><dd>Zoom textu</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>D</kbd></dt><dd>Zavřít terminál</dd>
+        </dl>
+      </div>
+
+      <div class="alert">
+        <span class="tag">Tip</span>
+        <div>Cestu vložíte i přetažením souboru z Finderu / Průzkumníka do terminálu, nebo přes <kbd>Cmd</kbd>+<kbd>C</kbd> ve Finderu a <kbd>Cmd</kbd>+<kbd>V</kbd> v terminálu. Mezery v cestě dávejte do uvozovek: <code>cd "Moje složka"</code>.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ────── COLUMN 2: CLAUDE CODE ────── -->
+  <section class="col" data-tone="claude" id="claude">
+    <header>
+      <h2>Claude Code</h2>
+    </header>
+    <div class="body">
+
+      <div class="block">
+        <h3>Spustit a ukončit</h3>
+        <dl class="rows">
+          <dt><code>claude</code></dt><dd>Spustí agenta v aktuální složce</dd>
+          <dt><code>claude --version</code></dt><dd>Verze</dd>
+          <dt><code>claude doctor</code></dt><dd>Diagnostika z terminálu</dd>
+          <dt><code>claude -c</code></dt><dd>Pokračuje poslední konverzací v této složce</dd>
+          <dt><code>claude -r</code></dt><dd>Výběr starší konverzace</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>D</kbd> nebo <code>/exit</code></dt><dd>Ukončí agenta</dd>
+        </dl>
+      </div>
+
+      <div class="block">
+        <h3>Speciální znaky v promptu</h3>
+        <dl class="rows">
+          <dt><code>/</code></dt><dd>Nabídka příkazů</dd>
+          <dt><code>@</code></dt><dd>Našeptávač souboru (agent ho přečte)</dd>
+          <dt><code>!</code></dt><dd>Spustí příkaz v terminálu (výstup přidá do konverzace)</dd>
+        </dl>
+      </div>
+
+      <div class="block">
+        <h3>Kontext a paměť</h3>
+        <dl class="rows">
+          <dt><code>/help</code></dt><dd>Seznam příkazů</dd>
+          <dt><code>/clear</code></dt><dd>Nová konverzace (stará dohledatelná přes <code>/resume</code>)</dd>
+          <dt><code>/compact</code></dt><dd>Nahradí konverzaci shrnutím</dd>
+          <dt><code>/context</code></dt><dd>Co zabírá kontext</dd>
+          <dt><code>/rewind</code></dt><dd>Vrátí konverzaci i soubory o pár kroků zpět</dd>
+          <dt><code>/resume</code></dt><dd>Otevře dřívější konverzaci</dd>
+          <dt><code>/cost</code></dt><dd>Tokeny a cena relace (API)</dd>
+          <dt><code>/usage</code></dt><dd>Zbývající limit předplatného</dd>
+        </dl>
+      </div>
+
+      <div class="block">
+        <h3>Kontext projektu</h3>
+        <dl class="rows">
+          <dt><code>/init</code></dt><dd>Vytvoří <code>CLAUDE.md</code> (popis projektu)</dd>
+          <dt><code>/memory</code></dt><dd>Úprava CLAUDE.md a dlouhodobé paměti</dd>
+          <dt><code>/add-dir slozka</code></dt><dd>Přidá složku do dosahu agenta</dd>
+        </dl>
+      </div>
+
+      <div class="block">
+        <h3>Klávesy v běžící relaci</h3>
+        <dl class="rows">
+          <dt><kbd>Esc</kbd></dt><dd>Přeruší agenta</dd>
+          <dt><kbd>Esc</kbd> <kbd>Esc</kbd></dt><dd>Vrátí zpět konverzaci i změny v souborech</dd>
+          <dt><kbd>Shift</kbd>+<kbd>Tab</kbd></dt><dd>Přepnutí režimu oprávnění (viz vpravo)</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>T</kbd></dt><dd>Seznam úkolů agenta</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>O</kbd></dt><dd>Podrobný výpis (co agent dělá)</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>R</kbd></dt><dd>Historie vašich promptů</dd>
+        </dl>
+      </div>
+
+      <div class="block">
+        <h3>Nastavení a diagnostika</h3>
+        <dl class="rows">
+          <dt><code>/permissions</code></dt><dd>Pravidla agenta (co smí, na co se ptá, co ne)</dd>
+          <dt><code>/config</code></dt><dd>Nastavení (téma, model, výstupní styl)</dd>
+          <dt><code>/model</code></dt><dd>Změna modelu pro tuto konverzaci</dd>
+          <dt><code>/status</code></dt><dd>Verze, model, účet, připojení</dd>
+          <dt><code>/doctor</code></dt><dd>Diagnostika (<kbd>f</kbd> auto-opraví)</dd>
+          <dt><code>/login</code> · <code>/logout</code></dt><dd>Přihlášení / odhlášení účtu</dd>
+        </dl>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ────── COLUMN 3: SAFETY ────── -->
+  <section class="col col-3" data-tone="sec" id="bezpecnost">
+    <header>
+      <h2>Bezpečné používání</h2>
+    </header>
+    <div class="body">
+
+      <div class="block">
+        <h3>Permission modes</h3>
+        <div class="modes">
+          <div class="mode">
+            <span class="mname">plan</span>
+            <span class="mdesc">Jen čte a navrhuje plán. Nic nezmění, dokud neschválíte.</span>
+            <span class="badge safe">Průzkum</span>
+            <code class="mrun">claude --permission-mode plan</code>
+          </div>
+          <div class="mode">
+            <span class="mname">default</span>
+            <span class="mdesc">Ptá se před každou změnou i příkazem.</span>
+            <span class="badge safe">Výchozí</span>
+            <code class="mrun">claude</code>
+          </div>
+          <div class="mode">
+            <span class="mname">acceptEdits</span>
+            <span class="mdesc">Soubory upravuje sám, příkazy schvalujete.</span>
+            <span class="badge mid">Úpravy souborů</span>
+            <code class="mrun">claude --permission-mode acceptEdits</code>
+          </div>
+          <div class="mode">
+            <span class="mname">auto</span>
+            <span class="mdesc">Schvaluje i příkazy, pokud je systém Anthropicu vyhodnotí jako bezpečné. Sám blokuje odesílání dat ven, nasazení do produkce a nebezpečné příkazy. Vyžaduje plán Max, Team, Enterprise nebo API.</span>
+            <span class="badge mid">Delší úkoly</span>
+            <code class="mrun">claude --permission-mode auto</code>
+          </div>
+          <div class="mode">
+            <span class="mname">bypassPermissions</span>
+            <span class="mdesc">Bez kontrol — schvaluje vše kromě chráněných cest (viz níže). Používejte jen v kontejneru nebo virtuálním stroji.</span>
+            <span class="badge risky">Bez kontrol</span>
+            <code class="mrun">claude --dangerously-skip-permissions</code>
+          </div>
+        </div>
+        <p style="font-size:11px;color:var(--ink-2);margin-top:10px;line-height:1.5;"><kbd>Shift</kbd>+<kbd>Tab</kbd> přepíná mezi režimy za běhu (aktuální vidíte ve spodní liště). <code>/permissions</code> zobrazí a upraví pravidla (co je povolené, co se ptá, co je zakázané).</p>
+      </div>
+
+      <div class="block">
+        <h3>Co agentovi nedávat</h3>
+        <ul class="tight">
+          <li>Hesla, přístupové klíče, čísla karet</li>
+          <li>Citlivé údaje klientů (rodná čísla, zdravotní data, smlouvy bez mandátu)</li>
+          <li>Cizí soubory, ke kterým nemáte oprávnění</li>
+        </ul>
+        <div class="alert bad">
+          <span class="tag">Únik</span>
+          <div><strong>Heslo nebo klíč berte jako kompromitované</strong> -- zneplatněte je a vygenerujte nové. Data, která agent viděl, jsou už na serverech Anthropicu; <code>/clear</code> je neodstraní, jen začne novou konverzaci. Citlivý soubor smažte z pracovní složky i z gitu (<code>git rm</code> + nový commit).</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Oddělená pracovní složka</h3>
+        <ul class="tight">
+          <li>Agenta spouštějte v <strong>nové, prázdné složce</strong> — ne na ploše, v Dokumentech ani v domově</li>
+          <li>Agent vidí jen tuto složku a její podsložky</li>
+          <li>Další složku přidejte vědomě: <code>/add-dir cesta</code></li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3>Git</h3>
+        <dl class="rows">
+          <dt><code>git init</code></dt><dd>Inicializace repository (jednou)</dd>
+          <dt><code>git status</code></dt><dd>Změny od posledního commitu</dd>
+          <dt><code>git diff</code></dt><dd>Detail změn v souborech</dd>
+          <dt><code>git add . &amp;&amp; git commit -m "popis"</code></dt><dd>Uloží aktuální stav</dd>
+          <dt><code>git restore .</code></dt><dd>Vrátí soubory k poslednímu commitu</dd>
+        </dl>
+      </div>
+
+      <div class="block">
+        <h3>Sandbox</h3>
+        <p style="font-size:11.5px;color:var(--ink-2);margin-bottom:6px;line-height:1.4;">Omezí, k jakým souborům a serverům může agent při spouštění příkazů přistupovat — ochrana vynucená operačním systémem, ne agentem. Zapíná se v souboru <code>settings.json</code>.</p>
+        <dl class="rows">
+          <dt><code>"sandbox": { "enabled": true }</code></dt><dd>Zapnutí v <code>settings.json</code></dd>
+          <dt>macOS</dt><dd>Funguje (přes Seatbelt)</dd>
+          <dt>Linux</dt><dd>Funguje (vyžaduje novější jádro)</dd>
+          <dt>Windows</dt><dd>Nativně <strong>není</strong> — jen ve WSL2</dd>
+        </dl>
+      </div>
+
+      <div class="block">
+        <h3>Chráněné cesty</h3>
+        <p style="font-size:11.5px;color:var(--ink-2);margin-bottom:4px;line-height:1.4;">Vždy se ptá (i v <code>bypassPermissions</code>): <code>.git</code>, <code>.claude</code> (kromě <code>commands</code>, <code>agents</code>, <code>skills</code>), <code>.vscode</code>, <code>.idea</code>, <code>.husky</code>. V <code>default</code> také shell config (<code>.bashrc</code>, <code>.zshrc</code>, <code>.profile</code>) a globální git (<code>.gitconfig</code>, <code>.gitmodules</code>).</p>
+        <div class="alert bad">
+          <span class="tag">Pravidlo</span>
+          <div>Co schválíte, to agent udělá. V režimu <code>default</code> odsouhlasíte každou akci předem. Volnější režimy (<code>acceptEdits</code>, <code>auto</code>, <code>bypassPermissions</code>) pouštějte jen v izolované složce a s aktivním gitem (viz výše).</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div>Tempo.ooo  //  HYW 2026  //  cheatsheet v1 · Terminál + Claude</div>
+</footer>
+
+</article>
+
+</body>
+</html>

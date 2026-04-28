@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheatsheet // Hranice agenta // HYW 2026 · Tempo</title>
+<meta name="description" content="Cheatsheet pro účastníky workshopu Hack Your Way 2026 (Tempo.ooo): kam Claude vidí a jak permission modes mění frekvenci ptaní.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cheatsheet.css">
+</head>
+<body>
+
+<nav class="cs-nav">
+  <span class="nav-label">Cheatsheet //</span>
+  <a href="index.html" >Terminál + Claude</a>
+  <a href="hranice.html" class="active">Hranice agenta</a>
+  <a href="varianty.html" >Šest cest k agentovi</a>
+</nav>
+
+<article class="page" id="page-2">
+
+<header class="bar">
+  <div class="crest">
+    <div class="row1">
+      <span>Kam Claude vidí</span>
+      <span class="slash">//</span>
+      <span style="color: var(--claude)">Hranice agenta</span>
+    </div>
+  </div>
+  <div class="stamp">Hack Your Way 2026 · Workshop · Tempo.ooo</div>
+</header>
+
+<main class="zones-layout">
+
+  <section class="zones-diagram" aria-label="Hranice dosahu agenta">
+    <div class="zone z-out">
+      <div class="zone-row">
+        <span class="zone-name">Zbytek počítače</span>
+        <span class="zone-tag muted">⊘ Mimo dosah</span>
+      </div>
+      <div class="zone-detail"><code>/System</code> · <code>/etc</code> · jiní uživatelé · síťové disky · cizí domovské složky</div>
+
+      <div class="zone z-mid">
+        <div class="zone-row">
+          <span class="zone-name">Mimo pracovní složku</span>
+          <span class="zone-tag mid">👁 Ptá se na čtení i zápis</span>
+        </div>
+        <div class="zone-detail"><code>~/Documents</code> · <code>~/Desktop</code> · rodičovská složka · jiné projekty. <strong>V bypassu</strong> se neptá.</div>
+
+        <div class="zone z-in">
+          <div class="zone-row">
+            <span class="zone-name">Pracovní složka + podsložky</span>
+            <span class="zone-tag safe">✓ Ptá se před každou změnou</span>
+          </div>
+          <div class="zone-detail">složka, kde jste spustili <code>claude</code>, plus všechny její podsložky. Volnější módy (<code>acceptEdits</code>, <code>auto</code>, <code>bypass</code>) ptaní zkracují — viz tabulka.</div>
+
+          <div class="zone z-prot">
+            <div class="zone-row">
+              <span class="zone-name"><code>.git</code> · <code>.claude</code> · <code>.vscode</code> · <code>.idea</code> · <code>.husky</code></span>
+              <span class="zone-tag danger">🔒 Vždy se ptá (i v bypassu)</span>
+            </div>
+            <div class="zone-detail">v <code>default</code> také <code>.bashrc</code>, <code>.zshrc</code>, <code>.gitconfig</code></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="zones-caption"><code>claude --add-dir /jina/cesta</code> nebo <code>/add-dir cesta</code> rozšíří „Pracovní složku" o další konkrétní složku. Bez toho ji agent nevidí, i kdybyste mu cestu napsali do promptu.</p>
+  </section>
+
+  <aside class="zones-side">
+
+    <div class="block">
+      <h3>Jak to číst</h3>
+      <p>Diagram a labely platí pro <strong>default</strong> mód. Volnější módy mění, <strong>jak často se Claude ptá</strong> uvnitř pracovní zóny. <strong>Bypass</strong> jediný přeskakuje ptaní i mimo ni — chráněné cesty (<code>.git</code>, <code>.husky</code>…) se ale ptá vždy.</p>
+      <p>Vlastní hranici (kam Claude vůbec vidí) nastavujete vy: vyberete pracovní složku, případně přidáte další přes <code>--add-dir</code>.</p>
+    </div>
+
+    <div class="block">
+      <h3>Mód × frekvence ptaní v pracovní složce</h3>
+      <table class="modes-table">
+        <thead>
+          <tr><th></th><th>Číst</th><th>Měnit soubory</th><th>Spouštět příkaz</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>plan</td><td>sám</td><td colspan="2" class="muted">jen plánuje, neprovede</td></tr>
+          <tr><td>default</td><td>sám</td><td>ptá se</td><td>ptá se</td></tr>
+          <tr><td>acceptEdits</td><td>sám</td><td>sám</td><td>ptá se</td></tr>
+          <tr><td>auto</td><td>sám</td><td>sám</td><td>sám (pokud bezpečné)</td></tr>
+          <tr><td>bypassPermissions</td><td>sám</td><td>sám</td><td>sám</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11.5px;color:var(--ink-2);margin-top:8px;line-height:1.45;"><strong>Mimo pracovní složku</strong> se Claude ptá ve všech módech kromě <code>bypass</code>. <strong>Chráněné cesty</strong> se ptá vždy, bez výjimky.</p>
+    </div>
+
+    <div class="alert">
+      <span class="tag">Sandbox navíc</span>
+      <div>Volitelné druhé patro: zapnete <code>"sandbox": { "enabled": true }</code> v <code>settings.json</code> a operační systém dál zužuje hranice (Claude pak nemůže ani číst mimo zónu, ani sahat na <code>.bashrc</code> v bypass módu). macOS přes Seatbelt, Linux/WSL2 přes <code>bubblewrap</code>, na Windows nativně zatím není.</div>
+    </div>
+
+  </aside>
+
+</main>
+
+<footer class="foot">
+  <div>Tempo.ooo  //  HYW 2026  //  cheatsheet v1 · Hranice agenta</div>
+</footer>
+
+</article>
+
+</body>
+</html>

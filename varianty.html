@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheatsheet // Šest cest k Claude Code // HYW 2026 · Tempo</title>
+<meta name="description" content="Cheatsheet pro účastníky workshopu Hack Your Way 2026 (Tempo.ooo): mapa a porovnání variant Claude Code (CLI, desktop, IDE plugin, web, Routines, Cowork).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cheatsheet.css">
+</head>
+<body>
+
+<nav class="cs-nav">
+  <span class="nav-label">Cheatsheet //</span>
+  <a href="index.html" >Terminál + Claude</a>
+  <a href="hranice.html" >Hranice agenta</a>
+  <a href="varianty.html" class="active">Šest cest k agentovi</a>
+</nav>
+
+<article class="page" id="page-3">
+
+<header class="bar">
+  <div class="crest">
+    <div class="row1">
+      <span>Kde Claude Code potkáte v praxi</span>
+      <span class="slash">//</span>
+      <span style="color: var(--claude)">Šest cest k jednomu agentovi</span>
+    </div>
+  </div>
+  <div class="stamp">Hack Your Way 2026 · Workshop · Tempo.ooo</div>
+</header>
+
+<main class="variants-layout">
+
+  <section class="variants-map" aria-label="Mapa variant Claude Code">
+    <h3>Mapa: kde sedíte vy</h3>
+    <div class="map-frame-mini">
+      <span class="axis-y-top">uživatelsky přívětivé</span>
+      <span class="axis-y-bottom">technicky náročné</span>
+      <span class="axis-x-left">na vašem počítači</span>
+      <span class="axis-x-right">v cloudu</span>
+
+      <div class="pt outline" style="--x: 80%; --y: 16%">
+        <div class="pt-label">Cowork</div>
+        <div class="pt-sub">samostatný produkt</div>
+      </div>
+
+      <div class="pt" style="--x: 70%; --y: 34%">
+        <div class="pt-label">Claude.ai/code</div>
+        <div class="pt-sub">v prohlížeči</div>
+      </div>
+
+      <div class="pt" style="--x: 18%; --y: 44%">
+        <div class="pt-label">Desktopová aplikace</div>
+        <div class="pt-sub">klikací rozhraní</div>
+      </div>
+
+      <div class="pt" style="--x: 28%; --y: 64%">
+        <div class="pt-label">Plugin do IDE</div>
+        <div class="pt-sub">VS Code, Cursor, JetBrains</div>
+      </div>
+
+      <div class="pt" style="--x: 78%; --y: 74%">
+        <div class="pt-label">Routines</div>
+        <div class="pt-sub">naplánované úlohy</div>
+      </div>
+
+      <div class="pt" style="--x: 14%; --y: 86%">
+        <div class="pt-label">Terminál (CLI)</div>
+        <div class="pt-sub">plné prostředí</div>
+      </div>
+    </div>
+    <p style="font-size:11.5px;color:var(--ink-2);margin-top:12px;line-height:1.5;">Dvě osy, šest bodů. Cowork je vykreslený dutým kruhem — je to samostatný produkt Anthropicu, ne varianta Claude Code, ale řeší podobné úlohy pro netechnické uživatele.</p>
+  </section>
+
+  <section class="variants-grid">
+
+    <article class="variant-card">
+      <h4>Terminál (CLI)</h4>
+      <div class="vsub">na vašem počítači · pro technicky zdatné</div>
+      <span class="stage">GA</span>
+      <dl>
+        <dt>Co znát</dt><dd>shell, ovládání souborů z příkazové řádky</dd>
+        <dt>V čem vyniká</dt><dd>plné prostředí, skriptování, integrace do CI</dd>
+        <dt>Kdy zvolit</dt><dd>jste v terminálu doma a chcete maximum</dd>
+      </dl>
+    </article>
+
+    <article class="variant-card">
+      <h4>Desktopová aplikace</h4>
+      <div class="vsub">na vašem počítači · pro středně zdatné</div>
+      <span class="stage">GA</span>
+      <dl>
+        <dt>Co znát</dt><dd>nic — instalace a klik</dd>
+        <dt>V čem vyniká</dt><dd>vizuální porovnání změn, paralelní okna, převzetí úkolu z mobilu</dd>
+        <dt>Kdy zvolit</dt><dd>nechcete terminál, ale chcete plný přístup k souborům</dd>
+      </dl>
+    </article>
+
+    <article class="variant-card">
+      <h4>Plugin do IDE</h4>
+      <div class="vsub">na vašem počítači · pro vývojáře</div>
+      <span class="stage beta">GA / beta</span>
+      <dl>
+        <dt>Co znát</dt><dd>VS Code, Cursor nebo JetBrains</dd>
+        <dt>V čem vyniká</dt><dd>změny přímo v editoru, kontext z otevřených souborů</dd>
+        <dt>Kdy zvolit</dt><dd>jste vývojář a nechcete opouštět editor</dd>
+      </dl>
+    </article>
+
+    <article class="variant-card">
+      <h4>Web (claude.ai/code)</h4>
+      <div class="vsub">v cloudu · pro kohokoli s prohlížečem</div>
+      <span class="stage">GA</span>
+      <dl>
+        <dt>Co znát</dt><dd>nic</dd>
+        <dt>V čem vyniká</dt><dd>bez instalace, dostupné odkudkoli, mobile-friendly</dd>
+        <dt>Kdy zvolit</dt><dd>jste na cizím počítači nebo na mobilu</dd>
+      </dl>
+    </article>
+
+    <article class="variant-card">
+      <h4>Routines</h4>
+      <div class="vsub">v cloudu · pro technicky zdatné</div>
+      <span class="stage preview">Preview</span>
+      <dl>
+        <dt>Co znát</dt><dd>plánovače, GitHub triggery, API události</dd>
+        <dt>V čem vyniká</dt><dd>běh úlohy bez vašeho zásahu, autonomní úlohy</dd>
+        <dt>Kdy zvolit</dt><dd>máte opakovanou úlohu, kterou chcete pustit autonomně</dd>
+      </dl>
+    </article>
+
+    <article class="variant-card outline">
+      <h4>Cowork</h4>
+      <div class="vsub">v cloudu · pro netechnické · samostatný produkt</div>
+      <span class="stage">GA</span>
+      <dl>
+        <dt>Co znát</dt><dd>nic</dd>
+        <dt>V čem vyniká</dt><dd>tvorba dokumentů, tabulek a úloh bez kódu</dd>
+        <dt>Kdy zvolit</dt><dd>děláte agentic úlohy s dokumenty, ne s kódem</dd>
+      </dl>
+    </article>
+
+  </section>
+
+</main>
+
+<section class="variants-notes">
+  <div class="note"><strong>Terminál a Desktopová aplikace sdílí jádro.</strong> Stejné nastavení, stejná historie konverzací. Rozhraní jsou různá, agent je stejný.</div>
+  <div class="note"><strong>Cowork není Claude Code.</strong> Anthropic ho prodává jako samostatný produkt pro netechnické úlohy. Do mapy patří, protože řeší podobné věci pro lidi, kteří nepíšou kód.</div>
+  <div class="note"><strong>Routines jsou v preview.</strong> Triggery i chování se můžou měnit. Pro produkční nasazení dnes ještě s rezervou.</div>
+  <div class="note"><strong>Web a Desktop se neperou.</strong> Web použijete na cizím stroji nebo mobilu, desktop na svém. Dají se kombinovat — historie konverzací se synchronizuje.</div>
+</section>
+
+<footer class="foot">
+  <div>Tempo.ooo  //  HYW 2026  //  cheatsheet v1 · Šest cest k agentovi</div>
+</footer>
+
+</article>
+
+</body>
+</html>
