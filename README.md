@@ -6,7 +6,7 @@ Statický web s praktickými podklady pro účastníky workshopu **Přeskočte c
 
 - [`index.html`](index.html) – Cheatsheet: terminál + Claude Code (základy)
 - [`hranice.html`](hranice.html) – Hranice agenta (kam vidí, co musí odsouhlasit)
-- [`varianty.html`](varianty.html) – Šest cest k agentovi (různá UI / prostředí)
+- [`varianty.html`](varianty.html) – Sedm cest k agentovi (různá UI / prostředí)
 
 ## Deploy
 
@@ -26,7 +26,7 @@ netlify deploy --prod
 .
 ├── index.html           # Cheatsheet (Terminál + Claude)
 ├── hranice.html         # Hranice agenta
-├── varianty.html        # Šest cest k agentovi
+├── varianty.html        # Sedm cest k agentovi
 ├── cheatsheet.css       # Styles
 ├── netlify.toml         # Netlify config (publish = root)
 └── .netlify/state.json  # Site link (siteId)

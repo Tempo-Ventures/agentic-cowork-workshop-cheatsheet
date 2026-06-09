@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cheatsheet // Šest cest k Claude Code // HYW 2026 · Tempo</title>
-<meta name="description" content="Cheatsheet pro účastníky workshopu Hack Your Way 2026 (Tempo.ooo): mapa a porovnání variant Claude Code (CLI, desktop, IDE plugin, web, Routines, Cowork).">
+<title>Cheatsheet // Sedm cest k Claude Code // HYW 2026 · Tempo</title>
+<meta name="description" content="Cheatsheet pro účastníky workshopu Hack Your Way 2026 (Tempo.ooo): mapa a porovnání variant Claude Code (CLI, desktop, IDE plugin, web, Routines, Cowork, Cloud agents).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
   <span class="nav-label">Cheatsheet //</span>
   <a href="index.html" >Terminál + Claude</a>
   <a href="hranice.html" >Hranice agenta</a>
-  <a href="varianty.html" class="active">Šest cest k agentovi</a>
+  <a href="varianty.html" class="active">Sedm cest k agentovi</a>
 </nav>
 
 <article class="page" id="page-3">
@@ -26,7 +26,7 @@
     <div class="row1">
       <span>Kde Claude Code potkáte v praxi</span>
       <span class="slash">//</span>
-      <span style="color: var(--claude)">Šest cest k jednomu agentovi</span>
+      <span style="color: var(--claude)">Sedm cest k jednomu agentovi</span>
     </div>
   </div>
   <div class="stamp">Hack Your Way 2026 · Workshop · Tempo.ooo</div>
@@ -62,9 +62,14 @@
         <div class="pt-sub">VS Code, Cursor, JetBrains</div>
       </div>
 
-      <div class="pt" style="--x: 78%; --y: 74%">
+      <div class="pt" style="--x: 78%; --y: 70%">
         <div class="pt-label">Routines</div>
         <div class="pt-sub">naplánované úlohy</div>
+      </div>
+
+      <div class="pt outline" style="--x: 86%; --y: 88%">
+        <div class="pt-label">Cloud agents</div>
+        <div class="pt-sub">agent na platformě</div>
       </div>
 
       <div class="pt" style="--x: 14%; --y: 86%">
@@ -72,7 +77,7 @@
         <div class="pt-sub">plné prostředí</div>
       </div>
     </div>
-    <p style="font-size:11.5px;color:var(--ink-2);margin-top:12px;line-height:1.5;">Dvě osy, šest bodů. Cowork je vykreslený dutým kruhem — je to samostatný produkt Anthropicu, ne varianta Claude Code, ale řeší podobné úlohy pro netechnické uživatele.</p>
+    <p style="font-size:11.5px;color:var(--ink-2);margin-top:12px;line-height:1.5;">Dvě osy, sedm bodů. Cowork a Cloud agents jsou vykreslené dutým kruhem — jsou to samostatné produkty Anthropicu (Cowork pro netechnické úlohy, Cloud agents na Claude Developer Platform), ne varianty Claude Code, ale řeší podobné úlohy.</p>
   </section>
 
   <section class="variants-grid">
@@ -113,7 +118,7 @@
     <article class="variant-card">
       <h4>Web (claude.ai/code)</h4>
       <div class="vsub">v cloudu · pro kohokoli s prohlížečem</div>
-      <span class="stage">GA</span>
+      <span class="stage preview">Preview</span>
       <dl>
         <dt>Co znát</dt><dd>nic</dd>
         <dt>V čem vyniká</dt><dd>bez instalace, dostupné odkudkoli, mobile-friendly</dd>
@@ -143,6 +148,17 @@
       </dl>
     </article>
 
+    <article class="variant-card outline">
+      <h4>Cloud agents</h4>
+      <div class="vsub">v cloudu · pro vývojáře · samostatný produkt platformy</div>
+      <span class="stage beta">Beta</span>
+      <dl>
+        <dt>Co znát</dt><dd>Claude Developer Platform, API klíč, CLI (<code>ant</code>) nebo SDK</dd>
+        <dt>V čem vyniká</dt><dd>vlastní agent (model + nástroje + MCP + skills) běžící jako sessions v cloud sandboxu, škáluje</dd>
+        <dt>Kdy zvolit</dt><dd>stavíte autonomního agenta do produkčního workflow, ne jen interaktivně kódíte</dd>
+      </dl>
+    </article>
+
   </section>
 
 </main>
@@ -150,12 +166,13 @@
 <section class="variants-notes">
   <div class="note"><strong>Terminál a Desktopová aplikace sdílí jádro.</strong> Stejné nastavení, stejná historie konverzací. Rozhraní jsou různá, agent je stejný.</div>
   <div class="note"><strong>Cowork není Claude Code.</strong> Anthropic ho prodává jako samostatný produkt pro netechnické úlohy. Do mapy patří, protože řeší podobné věci pro lidi, kteří nepíšou kód.</div>
-  <div class="note"><strong>Routines jsou v preview.</strong> Triggery i chování se můžou měnit. Pro produkční nasazení dnes ještě s rezervou.</div>
+  <div class="note"><strong>Cloud agents nejsou Claude Code.</strong> Jsou to Managed Agents na Claude Developer Platform — vlastního agenta si složíte z modelu, nástrojů, MCP a skills a Anthropic ho hostuje v cloud sandboxu. Jiná cesta než interaktivní kódování, ale ke stejnému agentovi.</div>
+  <div class="note"><strong>Routines a Web jsou v preview.</strong> Routines i Claude Code na webu (claude.ai/code) jsou research preview, Cloud agents běží v betě — triggery, limity i chování se můžou měnit. Pro produkční nasazení s rezervou.</div>
   <div class="note"><strong>Web a Desktop se neperou.</strong> Web použijete na cizím stroji nebo mobilu, desktop na svém. Dají se kombinovat — historie konverzací se synchronizuje.</div>
 </section>
 
 <footer class="foot">
-  <div>Tempo.ooo  //  HYW 2026  //  cheatsheet v1 · Šest cest k agentovi</div>
+  <div>Tempo.ooo  //  HYW 2026  //  cheatsheet v1 · Sedm cest k agentovi</div>
 </footer>
 
 </article>
