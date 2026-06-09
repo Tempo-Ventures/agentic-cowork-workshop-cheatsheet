@@ -10,14 +10,16 @@ Statický web s praktickými podklady pro účastníky workshopu **Přeskočte c
 
 ## Deploy
 
-Deploy přes [Netlify](https://www.netlify.com). Site ID je v `.netlify/state.json` (committed). Push do `main` → auto-deploy.
+Deploy přes [Netlify](https://www.netlify.com) na web **[hyw-cheatsheet.netlify.app](https://hyw-cheatsheet.netlify.app)** (site ID je v `.netlify/state.json`, committed).
+
+Web **není** napojený na GitHub CI — push do `main` automaticky nedeployuje. Deploy je nutné spustit ručně:
 
 ```bash
 # Lokální preview
 npx serve .
 
-# Manuální deploy
-netlify deploy --prod
+# Manuální deploy do produkce
+netlify deploy --prod --dir .
 ```
 
 ## Struktura
